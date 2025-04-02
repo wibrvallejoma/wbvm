@@ -1,11 +1,59 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const title = "William BV - Software Developer";
+const description = "Portfolio of William BV - Full Stack Developer & Creative Coder";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content={description}>
+</head>
+<body class="bg-slate-900 text-white">
+    <header class="container mx-auto px-4 py-6">
+        <nav class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-teal-400">wbvm.me</h1>
+            <div class="space-x-4">
+                <a href="#about" class="hover:text-teal-400 transition-colors">About</a>
+                <a href="#projects" class="hover:text-teal-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-teal-400 transition-colors">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4">
+        <section class="min-h-[80vh] flex items-center">
+            <div>
+                <h2 class="text-5xl font-bold mb-4">William BV</h2>
+                <p class="text-xl text-slate-400">Full Stack Developer specializing in modern web solutions</p>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <h3 class="text-3xl font-bold mb-6">About Me</h3>
+            <p class="text-slate-400 max-w-2xl">
+                Passionate developer with 5+ years of experience building web applications.
+                Specialized in JavaScript ecosystems and cloud-native solutions.
+            </p>
+        </section>
+
+        <section id="projects" class="py-20">
+            <h3 class="text-3xl font-bold mb-8">Featured Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    <h4 class="text-xl font-bold mb-2">Project 1</h4>
+                    <p class="text-slate-400">Description of project 1</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-800 mt-20 py-8 text-center text-slate-400">
+        <p>© 2024 wbvm.me - All rights reserved</p>
+    </footer>
+</body>
+</html>
