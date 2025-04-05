@@ -1,59 +1,94 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Avatar from '../images/avatar.png'
+
+import Amazonwebservices from 'simple-icons-astro/Amazonwebservices';
+import Vuedotjs from'simple-icons-astro/Vuedotjs';
+import Django from'simple-icons-astro/Django';
+import React from'simple-icons-astro/React';
 import "../styles/global.css";
 
 const title = "William BV - Software Developer";
 const description = "Portfolio of William BV - Full Stack Developer & Creative Coder";
 ---
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
-    <meta name="description" content={description}>
-</head>
-<body class="bg-slate-900 text-white">
-    <header class="container mx-auto px-4 py-6">
-        <nav class="flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-teal-400">wbvm.me</h1>
-            <div class="space-x-4">
-                <a href="#about" class="hover:text-teal-400 transition-colors">About</a>
-                <a href="#projects" class="hover:text-teal-400 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-teal-400 transition-colors">Contact</a>
+<Layout title={title} description={description}>
+    <section class="min-h-[80vh] flex items-center">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+            <div class="text-left space-y-4">
+                <h2 class="text-5xl font-bold">
+                    Hey folks!👋<br>
+                    This is <strong>Williams V</strong>
+                </h2>
+                <p class="text-xl text-slate-400">👨‍💻🎮 Full Stack Developer specializing in modern web solutions</p>
             </div>
-        </nav>
-    </header>
-
-    <main class="container mx-auto px-4">
-        <section class="min-h-[80vh] flex items-center">
-            <div>
-                <h2 class="text-5xl font-bold mb-4">William BV</h2>
-                <p class="text-xl text-slate-400">Full Stack Developer specializing in modern web solutions</p>
-            </div>
-        </section>
-
-        <section id="about" class="py-20">
-            <h3 class="text-3xl font-bold mb-6">About Me</h3>
-            <p class="text-slate-400 max-w-2xl">
-                Passionate developer with 5+ years of experience building web applications.
-                Specialized in JavaScript ecosystems and cloud-native solutions.
-            </p>
-        </section>
-
-        <section id="projects" class="py-20">
-            <h3 class="text-3xl font-bold mb-8">Featured Projects</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
-                    <h4 class="text-xl font-bold mb-2">Project 1</h4>
-                    <p class="text-slate-400">Description of project 1</p>
+            
+            {/* Character Illustration */}
+            <div class="relative max-w-md flex justify-center md:justify-end">
+                <div class="relative group w-64 h-64">
+                    <div class="absolute -inset-2 bg-teal-400/20 rounded-full transform group-hover:scale-105 transition-all">
+                        <div class="absolute inset-0 bg-gradient-to-br from-teal-400/30 to-transparent rounded-full" />
+                    </div>
+                    <Image 
+                        src={Avatar}
+                        alt="Hi there!"
+                        class="relative z-5 w-full h-full object-contain animate-float -bottom-10 left-5"
+                    />
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="border-t border-slate-800 mt-20 py-8 text-center text-slate-400">
-        <p>© 2024 wbvm.me - All rights reserved</p>
-    </footer>
-</body>
-</html>
+    <section id="about" class="py-20">
+        <div class="bg-white rounded-xl shadow-lg p-8 mx-auto max-w-4xl">
+            <h3 class="text-3xl font-bold mb-8">👨‍💻 About Me</h3>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="space-y-4 col-span-2">
+                    <p class="text-slate-400">
+                        Passionate full-stack developer with 5+ years of experience building scalable web applications.
+                        Specialized in modern JavaScript ecosystems (React / Vue.js, Node.js, Django, TypeScript) and cloud-native solutions (AWS, Docker).
+                    </p>
+                </div>
+                <div class="flex flex-col justify-start align-top">
+                    <h4 class="text-xl font-semibold mb-4">💻 Tech Stack</h4>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="tech-item bg-slate-800 px-4 py-2 rounded-full flex items-center gap-2">
+                            <Amazonwebservices class="w-6 h-6 text-amber-400" />
+                            <Vuedotjs class="w-6 h-6 text-green-400" />
+                            <Django class="w-6 h-6 text-emerald-400" />
+                            <React class="w-6 h-6 text-sky-400" />
+                        </div>
+                        <span class="text-slate-400">Wait! I have more... but I some logos are not allowed 😔</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="py-20">
+        <div class="bg-white rounded-xl shadow-lg p-8 mx-auto max-w-4xl">
+            <h3 class="text-3xl font-bold mb-8">💾 Featured Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <span class="text-2xl text-slate-400">Working on it... 🏗️🚧👷‍♂️</span>
+                <!-- <div class="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    <h4 class="text-xl font-bold mb-2">Project 1</h4>
+                    <p class="text-slate-400">Description of project 1</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+    .animate-float {
+        animation: float 4s ease-in-out infinite;
+    }
+    .group:hover .animate-float {
+        animation: float 2s ease-in-out infinite;
+    }
+
+</style>
