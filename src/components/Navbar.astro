@@ -1,0 +1,28 @@
+<header class="p-4 sticky top-0 z-10 bg-slate-100/20 backdrop-filter backdrop-blur-sm">
+    <nav class="container mx-auto flex justify-between items-center" aria-label="Main navigation">
+        <h1 class="text-2xl font-bold">
+            <a href="/" class="relative inline-block overflow-hidden group">
+                <span class="block text-teal-400 transition-all duration-500 bg-[length:200%_100%] bg-left bg-gradient-to-r from-teal-400 to-black bg-clip-text group-hover:text-transparent group-hover:bg-right">
+                    wbvm.me
+                </span>
+            </a>
+        </h1>
+        <div class="space-x-4">
+            <a href="/#about" class="btn btn-ghost">About</a>
+            <a href="/#projects" class="btn btn-ghost">Projects</a>
+            <a href="/contact" class="btn btn-ghost">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<style>
+    /* Add custom animation for text gradient */
+    @keyframes text-gradient {
+        from { background-position: left center }
+        to { background-position: right center }
+    }
+    
+    .group:hover span {
+        animation: text-gradient 0.5s ease-out forwards;
+    }
+</style>
